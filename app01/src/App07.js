@@ -23,6 +23,7 @@ const App = ({ notas }) => {
   
     setNotes(notes.concat(noteObject))
     setNewNote('')
+    setNewNote('')
   }
   const handleNoteChange = (event) => {
     console.log(event.target.value)
