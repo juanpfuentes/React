@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import App from './colores'
+import App from './App04'
 import reportWebVitals from './reportWebVitals'
 const notes = [
   {

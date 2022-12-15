@@ -1,20 +1,20 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import './App.css'
 
 const App = () => {
-  const [ counter, setCounter ] = useState(0)
+  const [counter, setCounter] = useState(0)
 
-  const handleClick = () => {    
-    console.log('clicked')
-  setCounter(counter+1)
+  const handleClick = () => {
+    setCounter(counter + 1)
   }
   return (
-    <div id="container">
-      <div id="contador">{counter}</div>
-      <button onClick={handleClick}>        plus      </button>    </div>
+    <div id='container'>
+      <div id='contador'>{counter}</div>
+      <button onClick={handleClick}> plus </button>{' '}
+    </div>
   )
 }
 
-export default App;
+export default App
