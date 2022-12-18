@@ -1,8 +1,14 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App07';
+import App from './App08b';
+import axios from 'axios'
 import reportWebVitals from './reportWebVitals';
+const promise = axios.get('http://localhost:3001/notes')
+
+promise.then(response => {
+  console.log(response)
+})
 const notes = [
   {
     id: 1,
