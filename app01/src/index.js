@@ -36,6 +36,13 @@ root.render(
   </React.StrictMode>
 )
 
+const num = [0, 0, 0]
+
+for (let i = 0; i < 1000; i++) {
+  let pos = Math.floor(Math.random() * 3)
+  num[pos]++
+}
+console.log(num)
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()
