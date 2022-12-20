@@ -3,17 +3,23 @@ import React, { useState } from 'react'
 import logo from './logo.svg'
 import './App.css'
 
-const Nota = ({ nota }) => <li>{nota}</li>
+const Nota = ({ nota, important }) => (
+  <li>
+    {nota} {important ? '✓' : ''}
+  </li>
+)
 
 const App = ({ notas }) => {
   const [notes, setNotes] = useState(notas)
   const [newNote, setNewNote] = useState('nueva nota...')
+  const [important, setImportant] = useState(true)
+  const [showAll, setShowAll] = useState(true)
   const addNote = event => {
     event.preventDefault()
     const noteObject = {
       content: newNote,
       date: new Date().toISOString(),
-      important: Math.random() < 0.5,
+      important: important,
       id: notes.length + 1
     }
 
@@ -24,16 +30,28 @@ const App = ({ notas }) => {
     console.log(event.target.value)
     setNewNote(event.target.value)
   }
+  const notesToShow = showAll ? notes : notes.filter(note => note.important)
   return (
     <div>
       <h1>Notas</h1>
+      <div>
+        <button onClick={() => setShowAll(!showAll)}>
+          Ver {showAll ? 'importantes' : 'todas'}
+        </button>
+      </div>
       <ul>
-        {notes.map(note => (
-          <Nota key={note.id} nota={note.content} />
+        {notesToShow.map(note => (
+          <Nota key={note.id} nota={note.content} important={note.important} />
         ))}
       </ul>
       <form onSubmit={addNote}>
         <input value={newNote} onChange={handleNoteChange} />
+        <input
+          type='checkbox'
+          name='important'
+          checked={important}
+          onChange={() => setImportant(!important)}
+        />
         <button type='submit'>save</button>
       </form>
     </div>
