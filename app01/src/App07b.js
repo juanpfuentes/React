@@ -11,6 +11,7 @@ const App = ({ notas }) => {
   const [newNote, setNewNote] = useState(
     'nueva nota...'
   ) 
+  const [showAll, setShowAll] = useState(true)
   const addNote = (event) => {
     event.preventDefault()
     const noteObject = {
@@ -27,11 +28,16 @@ const App = ({ notas }) => {
     console.log(event.target.value)
     setNewNote(event.target.value)
   }
+  const notesToShow  = showAll    ? notes    : notes.filter(note => note.important === true)
   return (
     <div>
       <h1>Notas</h1>
+      <div>
+        <button onClick={() => setShowAll(!showAll)}>Ver {showAll ? 'importantes' : 'todas' }
+        </button>
+        </div>
       <ul>
-        {notes.map(note => (<Nota key={note.id} nota={note.content} />))}
+        {notesToShow.map(note => (<Nota key={note.id} nota={note.content} />))}
         </ul>
         <form onSubmit={addNote}>
         <input

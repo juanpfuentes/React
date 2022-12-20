@@ -2,7 +2,14 @@ import React, { useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import App from './pipati'
+
+import axios from 'axios'
 import reportWebVitals from './reportWebVitals'
+const promise = axios.get('http://localhost:3001/notes')
+
+promise.then(response => {
+  console.log(response)
+})
 const notes = [
   {
     id: 1,
@@ -30,6 +37,13 @@ root.render(
   </React.StrictMode>
 )
 
+const num = [0, 0, 0]
+
+for (let i = 0; i < 1000; i++) {
+  let pos = Math.floor(Math.random() * 3)
+  num[pos]++
+}
+console.log(num)
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()
