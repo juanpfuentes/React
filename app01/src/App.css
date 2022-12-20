@@ -40,3 +40,17 @@
 .important{
   background-color: #8bff1e;
 }
+
+#formNote{
+  font-size: 1.2em;
+  display: flex;
+  justify-content:space-evenly;
+  margin: 20px 0;
+  background-color: #ddd;
+  padding: 5px;
+  align-items: center;
+  border-radius: 8px;
+}
+#formNote input{
+  font-size: 1em;
+}

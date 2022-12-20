@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-import logo from './logo.svg'
 import './App.css'
 
 const Form = ({ addNote }) => {
@@ -22,15 +21,25 @@ const Form = ({ addNote }) => {
     setNewNote(event.target.value)
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <input value={newNote} onChange={handleNoteChange} />
-      <input
-        type='checkbox'
-        name='important'
-        checked={important}
-        onChange={() => setImportant(!important)}
-      />
-
+    <form onSubmit={handleSubmit} id='formNote'>
+      <div>
+        <label for='newNote'>Nota: </label>
+        <input
+          id='newNote'
+          value={newNote}
+          onChange={handleNoteChange}
+          placeholder='Introduzca nota'
+        />
+      </div>
+      <div>
+        <label for='important'>¿Es importante?: </label>
+        <input
+          type='checkbox'
+          id='important'
+          checked={important}
+          onChange={() => setImportant(!important)}
+        />
+      </div>
       <button type='submit'>Guardar</button>
     </form>
   )
