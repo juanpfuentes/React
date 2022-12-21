@@ -1,18 +1,56 @@
 #container p{
   text-align: center;
-  font-size: 48px;
+  font-size: 1em;
   margin: auto;
   width: 50%;
 }
 
 #container{
   text-align: center;
-  font-size: 48px;
   margin: auto;
   width: 50%;
 }
 
 #container button{
-  font-size: 24px;
+  font-size: 1em;
   padding: 9px;
+}
+
+#notes {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#notes td, #notes th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+#notes tr:hover {background-color: #ddd;}
+
+#notes th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+.important{
+  background-color: #8bff1e;
+}
+
+#formNote{
+  font-size: 1.2em;
+  display: flex;
+  justify-content:space-evenly;
+  margin: 20px 0;
+  background-color: #ddd;
+  padding: 5px;
+  align-items: center;
+  border-radius: 8px;
+}
+#formNote input{
+  font-size: 1em;
 }
