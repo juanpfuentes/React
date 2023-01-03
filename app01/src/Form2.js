@@ -2,31 +2,34 @@ import React, { useState } from 'react'
 
 import './App.css'
 
-const Form = ({ addNote }) => {
-  const [newNote, setNewNote] = useState('nueva nota...')
-  const [important, setImportant] = useState(true)
+const Form = ({ addNote, newNote, setNewNote }) => {
   const handleSubmit = event => {
     event.preventDefault()
     const noteObject = {
-      content: newNote,
+      id: newNote.id,
+      content: newNote.content,
       date: new Date().toISOString(),
-      important: important
+      important: newNote.important
     }
 
     addNote(noteObject)
-    setNewNote('')
   }
   const handleNoteChange = event => {
-    console.log(event.target.value)
-    setNewNote(event.target.value)
+    const name = event.target.id
+    const value = event.target.value
+    setNewNote({
+      ...newNote,
+      [name]: name === 'important' ? !newNote.important : value
+    })
+    console.log(newNote)
   }
   return (
     <form onSubmit={handleSubmit} id='formNote'>
       <div>
         <label htmlFor='newNote'>Nota: </label>
         <input
-          id='newNote'
-          value={newNote}
+          id='content'
+          value={newNote.content}
           onChange={handleNoteChange}
           placeholder='Introduzca nota'
         />
@@ -36,8 +39,8 @@ const Form = ({ addNote }) => {
         <input
           type='checkbox'
           id='important'
-          checked={important}
-          onChange={() => setImportant(!important)}
+          checked={newNote.important}
+          onChange={handleNoteChange}
         />
       </div>
       <button type='submit'>Guardar</button>
