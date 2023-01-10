@@ -1,0 +1,22 @@
+{
+  "alumno": [
+    {
+      "id": 1,
+      "nombre": "Ana Pi",
+      "email": "ana@pi.com",
+      "nota": 8
+    },
+    {
+      "id": 2,
+      "nombre": "Eva Buja",
+      "email": "eva@buj.com",
+      "nota": "8"
+    },
+    {
+      "id": 3,
+      "nombre": "Juan Ra",
+      "email": "juan@ra.com",
+      "nota": 4
+    }
+  ]
+}

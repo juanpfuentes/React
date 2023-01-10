@@ -15,8 +15,6 @@ const Nota = ({ nota }) => {
   )
 }
 const Notas = ({ notas }) => {
-  const { showAll } = useContext(NotasContext)
-
   return (
     <table id='notes'>
       <thead>
