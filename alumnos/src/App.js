@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import './App.css'
 import Alumnos from './components/Alumnos'
@@ -16,7 +16,7 @@ const App = () => {
     email: '',
     nota: 0
   })
-
+  const cabecera = useRef(null)
   const hook = () => {
     Service.getAll().then(response => {
       setAlumnos(response.data)
@@ -38,6 +38,7 @@ const App = () => {
     }
 
     setNuevoAlumno({ nombre: '', email: '', nota: 0 })
+    cabecera.current.innerHTML = 'Un nuevo alumno ¡Bote!'
   }
 
   const editAlumno = id => {
@@ -69,7 +70,7 @@ const App = () => {
       <Contexto.Provider
         value={{ editAlumno, deleteAlumno, nuevoAlumno, setNuevoAlumno }}
       >
-        <h1>Alumnos</h1>
+        <h1 ref={cabecera}>Alumnos</h1>
         <Modal show={show} titulo={titulo} onClick={onClick} />
         <Button variant='outline-primary' onClick={modalNuevoAlumno}>
           Nuevo Alumno

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 
 const counterReducer = (state = 0, action) => {
+  console.log(action)
   switch (action.type) {
     case 'INCREMENT':
       return state + 1
