@@ -36,10 +36,6 @@ const initialState = { a: 0, b: 0, result: 0 }
 export default function Form () {
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  function handleButtonClick () {
-    dispatch({ type: 'incremented_age' })
-  }
-
   function handleInputChange (e) {
     let name = e.target.name
     let value = Number(e.target.value)
