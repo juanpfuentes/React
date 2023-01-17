@@ -7,15 +7,16 @@ import Modal from './components/Modal'
 import Contexto from './components/Contexto'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Button } from 'react-bootstrap'
+const alumnoInicial = {
+  nombre: '',
+  email: '',
+  nota: 0
+}
 const App = () => {
   const [alumnos, setAlumnos] = useState([])
   const [show, setShow] = useState(false)
   const [titulo, setTitulo] = useState('Nuevo alumno')
-  const [nuevoAlumno, setNuevoAlumno] = useState({
-    nombre: '',
-    email: '',
-    nota: 0
-  })
+  const [nuevoAlumno, setNuevoAlumno] = useState(alumnoInicial)
   const cabecera = useRef(null)
   const hook = () => {
     Service.getAll().then(response => {
@@ -37,7 +38,7 @@ const App = () => {
       })
     }
 
-    setNuevoAlumno({ nombre: '', email: '', nota: 0 })
+    setNuevoAlumno(alumnoInicial)
     cabecera.current.innerHTML = 'Un nuevo alumno ¡Bote!'
   }
 
@@ -56,6 +57,7 @@ const App = () => {
   }
   const modalNuevoAlumno = () => {
     setTitulo('Nuevo alumno')
+    setNuevoAlumno(alumnoInicial)
     setShow(true)
   }
   const onClick = response => {

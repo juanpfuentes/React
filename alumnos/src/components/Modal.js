@@ -20,13 +20,13 @@ const Form = ({ show, titulo, onClick }) => {
             variant='secondary'
             onClick={() => onClick({ result: 0, msg: 'Cerrar' })}
           >
-            Close
+            Cerrar
           </Button>
           <Button
             variant='primary'
             onClick={() => onClick({ result: 1, msg: 'Enviar' })}
           >
-            Submit
+            Guardar
           </Button>
         </Modal.Footer>
       </Modal>

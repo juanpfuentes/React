@@ -17,7 +17,7 @@ const FormAlumno = () => {
 
   return (
     <Form>
-      <Form.Group className='mb-3' controlId='formBasicEmail'>
+      <Form.Group className='mb-3' controlId='formNombre'>
         <Form.Label>Nombre</Form.Label>
         <Form.Control
           name='nombre'
@@ -27,7 +27,7 @@ const FormAlumno = () => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group className='mb-3' controlId='formBasicEmail'>
+      <Form.Group className='mb-3' controlId='formMail'>
         <Form.Label>Email</Form.Label>
         <Form.Control
           name='email'
@@ -37,7 +37,7 @@ const FormAlumno = () => {
           onChange={handleChange}
         />
       </Form.Group>
-      <Form.Group className='mb-3' controlId='formBasicEmail'>
+      <Form.Group className='mb-3' controlId='formNota'>
         <Form.Label>Nota</Form.Label>
         <Form.Control
           name='nota'
