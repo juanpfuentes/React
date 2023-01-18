@@ -23,7 +23,7 @@ const Form = ({ addNote }) => {
   return (
     <form onSubmit={handleSubmit} id='formNote'>
       <div>
-        <label for='newNote'>Nota: </label>
+        <label htmlFor='newNote'>Nota: </label>
         <input
           id='newNote'
           value={newNote}
@@ -32,7 +32,7 @@ const Form = ({ addNote }) => {
         />
       </div>
       <div>
-        <label for='important'>¿Es importante?: </label>
+        <label htmlFor='important'>¿Es importante?: </label>
         <input
           type='checkbox'
           id='important'
